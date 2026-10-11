@@ -13,6 +13,7 @@ Rubén Hernández Alcázar.
 
 ## Índice
 - [Unidad 01 - Introducción a Java](unidad-01/)
+- [Unidad 02 - Fundamentos de Java](unidad-02/)
 
 ## Estado
 En construcción.
