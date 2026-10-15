@@ -251,7 +251,7 @@ Ahorro final: 185.00 euros
 ## 2.4. Crear Main.java desde el IDE
 
 1. Abre el proyecto Maven `tarea3` en IntelliJ IDEA.
-2. En **Project**, haz clic derecho en `src/main/java` (o en el paquete que has creado) → **New → Java Class** → `Main`.
+2. En **Project**, haz clic derecho en `src/main/java` (o en el paquete que has creado) → **New → Java Class** → `Ahorrador`.
 3. Incluye el método `main` y comienza a partir de este esqueleto. **No se ofrece la solución completa**:
 
 ```java
