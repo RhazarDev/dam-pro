@@ -434,3 +434,7 @@ El profesor revisará la estructura Maven, el `pom.xml`, el código, las pruebas
 ## Ampliación voluntaria
 
 Solicita una meta de ahorro (`float`) y muestra cuánto falta para alcanzarla después de cada aportación. Si la meta se alcanza, felicita al usuario. Realiza un commit adicional: `feat: incorporar meta de ahorro`.
+
+## Desarrollo y pruebas del alumno
+
+El do while funciona creando un bucle a partir de una condicion que se ejecuta al menos una vez. Lo que más se me ha complicado ha sido crear una suma total de los importes.

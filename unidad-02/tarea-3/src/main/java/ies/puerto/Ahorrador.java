@@ -18,10 +18,10 @@ public class Ahorrador {
         System.out.println("¿Cuanto dinero tienes ahorrado? ");
         float ahorroInicial = teclado.nextFloat();
         System.out.println("Hola, " + nombre);
-        while (aporte < 0) {
+        do {
             System.out.println("Introduce una cantidad para ahorrar: ");
             aporte = teclado.nextFloat();
-        }
+        } while (aporte < 0);
         int contador = 0;
         aporteTotal = aporteTotal + aporte;
         ahorroTotal = ahorroInicial + aporte;
@@ -40,20 +40,18 @@ public class Ahorrador {
                     ahorroTotal = ahorroTotal + aporte;
                     aporteTotal = aporteTotal + aporte;
                     System.out.println("Aportación registrada. Ahorro actual: " +ahorroTotal);
-                    break;
                     contador ++;
+                    break;
                 case "N", "n":
+                    System.out.println("===========================");
                     System.out.println("RESUMEN DEL AHORRO");
+                    System.out.println("===========================");
                     System.out.println("Ahorro inicial: " +ahorroInicial);
                     System.out.println("Aportaciones realizadas: "+contador);
                     System.out.println("Total aportado: " +aporteTotal);
                     System.out.println("Ahorro final: " +ahorroTotal);
+                    return;
             }
-            "Usuario: Marta\n" +
-                    "Ahorro inicial: 100.00 euros\n" +
-                    "Aportaciones realizadas: 3\n" +
-                    "Total aportado: 85.00 euros\n" +
-                    "Ahorro final: 185.00 euros"
 
 
         } while (!salir);
