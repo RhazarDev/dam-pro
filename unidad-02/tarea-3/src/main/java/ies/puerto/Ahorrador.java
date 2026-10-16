@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 public class Ahorrador {
-    static void main() {
+    public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
         float ahorroTotal = 0;
@@ -26,9 +26,9 @@ public class Ahorrador {
         aporteTotal = aporteTotal + aporte;
         ahorroTotal = ahorroInicial + aporte;
         System.out.println("Aportación registrada. Ahorro actual: " +ahorroTotal);
+        teclado.nextLine();
 
         do {
-            teclado.nextLine();
             System.out.println("¿Deseas realizar otra aportación? (S/N): ");
             String opcion = teclado.nextLine();
             switch (opcion) {
@@ -40,6 +40,7 @@ public class Ahorrador {
                     ahorroTotal = ahorroTotal + aporte;
                     aporteTotal = aporteTotal + aporte;
                     System.out.println("Aportación registrada. Ahorro actual: " +ahorroTotal);
+                    teclado.nextLine();
                     contador ++;
                     break;
                 case "N", "n":
@@ -51,17 +52,13 @@ public class Ahorrador {
                     System.out.println("Total aportado: " +aporteTotal);
                     System.out.println("Ahorro final: " +ahorroTotal);
                     return;
+                default:
+                    System.out.println("Opción no valida");
+                    break;
             }
-
 
         } while (!salir);
 
-
-
-
-
-
         teclado.close();
-
     }
 }
