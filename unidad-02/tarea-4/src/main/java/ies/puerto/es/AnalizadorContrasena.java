@@ -115,6 +115,11 @@ public class AnalizadorContrasena {
         return true;
     }
 
+    /**
+     * Funcion que genera un informe de la cadena
+     * @param sCadena String cadena de texto
+     * @return String que devuele un informe
+     */
     static String generarInforme(String sCadena) {
         return "Digitos: " +contarDigitos(sCadena)+
                 " Resultado: " +esContrasenaValida(sCadena);
