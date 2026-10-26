@@ -1,5 +1,7 @@
 package ies.puerto.es;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,7 +12,18 @@ public class GestorCalificaciones {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        solicitarNotaValida(teclado);
+        List<Double> notas = new ArrayList<>();
+        Double nota = solicitarNotaValida(teclado);
+        notas.add(nota);
+        System.out.println("Lista de notas: " +notas);
+        notas.add(4.2);
+        System.out.println("Lista de notas: " +notas);
+        double media = calcularMedia(notas);
+        System.out.println("La media es: " +media);
+        double minimo = obtenerMinima(notas);
+        System.out.println("El valor minimo es: " +minimo);
+        double maximo = obtenerMaxima(notas);
+        System.out.println("El valor maximo es: " +maximo);
     }
 
     /**
@@ -50,20 +63,76 @@ public class GestorCalificaciones {
         return Double.isFinite(dNota) && dNota >= 0 && dNota <= 10;
     }
 
-    static double solicitarNotaValida (Scanner teclado) {
+    static Double solicitarNotaValida (Scanner teclado) {
         boolean salida = false;
+        String sNota;
+        System.out.println("Introduce la nota: ");
+        sNota = teclado.nextLine();
+        double dNota = 0;
+        try{
+           dNota = convertirNota(sNota);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("El numero insertado es incorrecto");
+        }
+        /**
         do {
             System.out.println("Introduce la nota: ");
-            String sNota = teclado.nextLine();
-            double nota = convertirNota(sNota);
+            sNota = teclado.nextLine();
+            dNota = convertirNota(sNota);
             if (!esNotaValida(sNota)) {
                 System.out.println("Nota no valida");
             }
-        } while (!salida);
-
-        return 0;
+        } while (!esNotaValida(sNota));
+         **/
+        return dNota;
     }
 
+    static double calcularMedia (List<Double> lNotas) {
+        double media = 0;
+        double suma = 0;
+        for (int i = 0; i < lNotas.size(); i++) {
+            suma = suma + lNotas.get(i);
+        }
+        media = suma/lNotas.size();
+        return media;
+
+    }
+
+    static double obtenerMaxima (List<Double> lNotas) {
+
+        double maximo = 0;
+
+        for (int i = 0; i < lNotas.size(); i++) {
+            if (lNotas.get(i) > maximo) {
+                maximo = lNotas.get(i);
+            }
+            if (maximo == 10) {
+                return maximo;
+            }
+
+        }
+
+        return maximo;
+
+    }
+
+    static double obtenerMinima (List<Double> lNotas) {
+
+        double minimo = 10;
+
+        for (int i = 0; i < lNotas.size(); i++) {
+            if (lNotas.get(i) < minimo) {
+                minimo = lNotas.get(i);
+            }
+            if (minimo == 0) {
+                return minimo;
+            }
+
+        }
+
+        return minimo;
+
+    }
 
 
 }
