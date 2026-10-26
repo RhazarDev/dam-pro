@@ -43,8 +43,11 @@ public class GestorCalificaciones {
      * @return boolean de la nota
      */
     static boolean esNotaValida (String sNota) {
-        double nota = convertirNota(sNota);
-        return Double.isFinite(nota) && nota >= 0 && nota <= 10;
+        if (sNota == null || sNota.isEmpty()) {
+            return false;
+        }
+        double dNota = convertirNota(sNota);
+        return Double.isFinite(dNota) && dNota >= 0 && dNota <= 10;
     }
 
     static double solicitarNotaValida (Scanner teclado) {
