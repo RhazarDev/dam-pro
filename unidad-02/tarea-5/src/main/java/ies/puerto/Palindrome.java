@@ -13,7 +13,7 @@ public class Palindrome {
         System.out.println("Introduce la palabra o frase a analizar: ");
         String sFrase = teclado.nextLine();
         boolean bPalindrome = esPalindrome(sFrase);
-        System.out.println("La palbra/frase es palindrome = " +bPalindrome);
+        System.out.println("La palabra/frase es palindrome = " +bPalindrome);
     }
 
     /**
