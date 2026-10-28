@@ -24,19 +24,18 @@ public class ClaveSecreta {
         if (sPalabra == null || sPalabra.isEmpty()) {
             return "";
         }
+        sPalabra = sPalabra.replace("a", "?");
+        sPalabra = sPalabra.replace("A", "?");
+        sPalabra = sPalabra.replace("e", "S");
+        sPalabra = sPalabra.replace("E", "S");
+        sPalabra = sPalabra.replace("u", "x");
+        sPalabra = sPalabra.replace("U", "x");
+        sPalabra = sPalabra.replace("i", "!");
+        sPalabra = sPalabra.replace("I", "!");
+        sPalabra = sPalabra.replace("o", "4");
+        sPalabra = sPalabra.replace("O", "4");
 
-        sPalabra.replace("a", "?");
-        sPalabra.replace("A", "?");
-        sPalabra.replace("e", "S");
-        sPalabra.replace("E", "S");
-        sPalabra.replace("u", "x");
-        sPalabra.replace("U", "x");
-        sPalabra.replace("i", "!");
-        sPalabra.replace("I", "!");
-        sPalabra.replace("o", "4");
-        sPalabra.replace("O", "4");
 
-        String clave = sPalabra;
-        return clave;
+        return sPalabra;
     }
 }
