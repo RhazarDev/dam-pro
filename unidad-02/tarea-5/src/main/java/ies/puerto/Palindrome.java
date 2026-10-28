@@ -7,8 +7,7 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 public class Palindrome {
-
-    static void main() {
+    public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduce la palabra o frase a analizar: ");
         String sFrase = teclado.nextLine();
