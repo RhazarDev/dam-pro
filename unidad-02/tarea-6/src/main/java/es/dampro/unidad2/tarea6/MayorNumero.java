@@ -1,21 +1,44 @@
 package es.dampro.unidad2.tarea6;
 
 /**
- * TODO: documenta el propósito y la responsabilidad de la clase MayorNumero.
+ * Clase que calcula el mayor numero de una lista
+ * @author RhazarDev
+ * @version 1.0.0
  */
 public final class MayorNumero {
-
-    private MayorNumero() {
-        // Clase de algoritmos estáticos.
-    }
-
     /**
-     * TODO: explica el algoritmo y su comportamiento con datos límite.
-     * @param numeros Dato de entrada que debe cumplir el contrato del enunciado.
-     * @return Valor máximo de la secuencia.
+     * Clase que calcula el mayor numero de una lista separado por comas
+     * @param numeros String que contiene los numeros
+     * @return int con el numero mayor
      */
-    public static int obtenerMayor(String numeros) {
-        // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: obtenerMayor");
+    static int obtenerMayor(String numeros) {
+        if (numeros == null || numeros.isEmpty()) {
+            throw new IllegalArgumentException("Los numeros no pueden ser nulos ni estar vacio");
+        }
+
+        char coma = ',';
+        numeros = numeros + coma;
+        numeros = numeros.replace(" ", "");
+        String numeroActual = "";
+        int mayor = 0;
+        boolean primerNumero = true;
+
+        for (int i = 0; i < numeros.length(); i++) {
+            char caracter = numeros.charAt(i);
+
+            if (caracter != coma) {
+                numeroActual = numeroActual + caracter;
+            }
+
+            if (caracter == coma) {
+                int numero = Integer.parseInt(numeroActual);
+                if (primerNumero || numero > mayor) {
+                    mayor = numero;
+                    primerNumero = false;
+                }
+                numeroActual = "";
+            }
+        }
+        return mayor;
     }
 }
