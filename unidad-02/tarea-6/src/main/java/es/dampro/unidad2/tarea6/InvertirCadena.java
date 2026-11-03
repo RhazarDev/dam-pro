@@ -1,21 +1,28 @@
 package es.dampro.unidad2.tarea6;
 
 /**
- * TODO: documenta el propósito y la responsabilidad de la clase InvertirCadena.
+ * Clase que invierte una cadena de texto
+ * @author RhazarDev
+ * @version 1.0.0
  */
 public final class InvertirCadena {
-
-    private InvertirCadena() {
-        // Clase de algoritmos estáticos.
-    }
-
     /**
-     * TODO: explica el algoritmo y su comportamiento con datos límite.
-     * @param texto Dato de entrada que debe cumplir el contrato del enunciado.
-     * @return Cadena invertida, conservando espacios y mayúsculas.
+     * Crea una palabra o texto invertida a la original
+     * @param sPalabra String que almacena la Palabra/texto original
+     * @return String Cadena invertida
      */
-    public static String invertir(String texto) {
-        // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: invertir");
+    static String reverse(String sPalabra) {
+        StringBuilder resultado = new StringBuilder();
+        if (sPalabra == null || sPalabra.isEmpty()) {
+            return resultado.toString();
+        }
+
+        for (int i = sPalabra.length() - 1; i >= 0; i--) {
+            char caracter = sPalabra.charAt(i);
+            resultado.append(caracter);
+
+        }
+        return resultado.toString();
     }
+
 }
