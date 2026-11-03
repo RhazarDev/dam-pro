@@ -2,7 +2,6 @@ package es.dampro.unidad2.tarea6;
 
 /**
  * Clase que cuenta las vocales de un texto
- *
  * @author RhazarDev
  * @version 1.0.0
  */
