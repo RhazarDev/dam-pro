@@ -1,21 +1,37 @@
 package es.dampro.unidad2.tarea6;
 
 /**
- * TODO: documenta el propósito y la responsabilidad de la clase Palindromo.
+ * Clase que comprueba si una palabra es palindroma
  */
 public final class Palindromo {
-
-    private Palindromo() {
-        // Clase de algoritmos estáticos.
-    }
-
     /**
-     * TODO: explica el algoritmo y su comportamiento con datos límite.
-     * @param texto Dato de entrada que debe cumplir el contrato del enunciado.
-     * @return Resultado de la comprobación sin distinguir mayúsculas ni espacios.
+     * Funcion que comprueba si una palabra se lee del frente que al reves.
+     * @param frase String que tiene una frase.
+     * @return Boolean que pone True si una frase es palindrome.
      */
-    public static boolean esPalindromo(String texto) {
-        // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: esPalindromo");
+    public static boolean esPalindromo(String frase) {
+        if (frase == null) {
+            throw new IllegalArgumentException("La frase no puede ser nula");
+        }
+
+        if (frase.isEmpty()) {
+            return false;
+        }
+
+        frase = frase.toLowerCase();
+        frase = frase.replace(" ", "");
+
+        if (frase.isEmpty()) {
+            return false;
+        }
+
+        for (int i = 0; i < frase.length(); i++) {
+            char letraIzquierda = frase.charAt(i);
+            char letraDerecha = frase.charAt(frase.length() - 1 - i);
+            if (letraIzquierda != letraDerecha) {
+                return false;
+            }
+        }
+        return true;
     }
 }
