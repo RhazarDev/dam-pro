@@ -2,6 +2,8 @@ package es.dampro.unidad2.tarea6;
 
 /**
  * Clase que comprueba si una palabra es palindroma
+ * @author RhazarDev
+ * @version 1.0.0
  */
 public final class Palindromo {
     /**

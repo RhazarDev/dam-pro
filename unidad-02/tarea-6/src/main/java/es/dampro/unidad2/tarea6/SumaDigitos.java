@@ -1,21 +1,39 @@
 package es.dampro.unidad2.tarea6;
 
 /**
- * TODO: documenta el propósito y la responsabilidad de la clase SumaDigitos.
+ * Clase que suma los digitos de un entero
+ * @author RhazarDev
+ * @version 1.0.0
  */
 public final class SumaDigitos {
 
-    private SumaDigitos() {
-        // Clase de algoritmos estáticos.
-    }
-
     /**
-     * TODO: explica el algoritmo y su comportamiento con datos límite.
-     * @param numero Dato de entrada que debe cumplir el contrato del enunciado.
-     * @return Suma numérica de sus dígitos.
+     * Funcion que suma los digitos de un entero positivo
+     * @param numero String con el numero entero
+     * @return int suma numérica de sus dígitos.
      */
     public static int sumarDigitos(String numero) {
-        // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: sumarDigitos");
+        if (numero == null) {
+            throw new IllegalArgumentException("El numero no puede ser nulo");
+        }
+
+        if (numero.isEmpty()) {
+            throw new IllegalArgumentException("El numero no puede estar vacio");
+        }
+
+        int suma = 0;
+
+        for (int i = 0; i < numero.length(); i++) {
+            char caracter = numero.charAt(i);
+
+            if (caracter < '0' || caracter > '9') {
+                throw new IllegalArgumentException("El numero solo puede contener digitos");
+            }
+
+            int digito = Integer.parseInt(String.valueOf(caracter));
+            suma = suma + digito;
+        }
+
+        return suma;
     }
 }
