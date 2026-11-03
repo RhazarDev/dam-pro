@@ -1,15 +1,46 @@
 package es.dampro.unidad2.tarea6;
 
-/** TODO: documenta la finalidad de la clase. */
+/**
+ * Clase que calcula la media de unos numeros
+ * @author RhazarDev
+ * @version 1.0.0
+ */
 public final class MediaNumeros {
     private MediaNumeros() { }
 
     /**
-     * TODO: describe cómo se realiza el algoritmo.
-     * @param numeros Documenta el parámetro.
-     * @return Documenta el valor devuelto.
+     * Funcion que calcula la media de unos numeros en un String
+     * @param numeros String con los numeros
+     * @return double media de los numeros
      */
     public static double calcularMedia(String numeros) {
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        if (numeros == null || numeros.isEmpty()) {
+            throw new IllegalArgumentException("Los numeros no pueden ser nulos ni estar vacio");
+        }
+        
+       numeros = numeros.replace(" ", "");
+
+        char coma = ',';
+        numeros = numeros + coma;
+        numeros = numeros.replace(" ", "");
+        String numeroActual = "";
+        double suma = 0;
+        int cantidad = 0;
+
+        for (int i = 0; i < numeros.length(); i++) {
+            char caracter = numeros.charAt(i);
+
+            if (caracter != coma) {
+                numeroActual = numeroActual + caracter;
+            }
+
+            if (caracter == coma) {
+                suma = suma + Integer.parseInt(numeroActual);
+                cantidad++;
+                numeroActual = "";
+            }
+        }
+
+        return suma / cantidad;
     }
 }
