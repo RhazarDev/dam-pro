@@ -1,21 +1,44 @@
 package es.dampro.unidad2.tarea6;
 
 /**
- * TODO: documenta el propósito y la responsabilidad de la clase BinarioDecimal.
+ * Clase que convierte un numero binario a decimal.
+ * @author RhazarDev
+ * @version 1.0.0
  */
-public final class BinarioDecimal {
-
-    private BinarioDecimal() {
-        // Clase de algoritmos estáticos.
-    }
+public class BinarioDecimal {
 
     /**
-     * TODO: explica el algoritmo y su comportamiento con datos límite.
-     * @param binario Dato de entrada que debe cumplir el contrato del enunciado.
-     * @return Número decimal correspondiente.
+     * Convierte una cadena en binario a decimal
+     * @param sBinario String con el numero binario formado por ceros y unos
+     * @return int con el valor decimal del numero binario
      */
-    public static int convertirBinario(String binario) {
-        // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: convertirBinario");
+    static int convertirBinario(String sBinario) {
+        if (sBinario == null) {
+            throw new IllegalArgumentException("El binario no puede ser nulo");
+        }
+
+        if (sBinario.isEmpty()) {
+            throw new IllegalArgumentException("El binario no puede estar vacio");
+        }
+
+        int limite = 1073741823;
+        int decimal = 0;
+
+        for (int i = 0; i < sBinario.length(); i++) {
+            char caracter = sBinario.charAt(i);
+
+            if (caracter != '0' && caracter != '1') {
+                throw new IllegalArgumentException("El binario solo puede contener ceros y unos");
+            }
+
+            if (decimal > limite) {
+                throw new IllegalArgumentException("El binario no cabe en un int");
+            }
+
+            int digito = Integer.parseInt(String.valueOf(caracter));
+            decimal = decimal * 2 + digito;
+        }
+
+        return decimal;
     }
 }
