@@ -1,21 +1,29 @@
 package es.dampro.unidad2.tarea6;
 
 /**
- * TODO: documenta el propósito y la responsabilidad de la clase Factorial.
+ * Clase que calcula el factorial de un numero entre 0 y 12
+ * @author RhazarDev
+ * @version 1.0.0
  */
 public final class Factorial {
-
-    private Factorial() {
-        // Clase de algoritmos estáticos.
-    }
-
     /**
-     * TODO: explica el algoritmo y su comportamiento con datos límite.
-     * @param numero Dato de entrada que debe cumplir el contrato del enunciado.
-     * @return Factorial del número indicado.
+     * Calcula el factorial de un numero dado
+     * @param numero int para el calculo de un factorial
+     * @return int con el resultado
      */
-    public static int calcularFactorial(String numero) {
-        // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: calcularFactorial");
+    static int calcular(int numero) {
+        if (numero <= 1) {
+            return 1;
+        }
+        if (numero < 0 | numero > 12) {
+            throw new IllegalArgumentException("El numero tiene que estar entre 0 y 12");
+        }
+        int resultado = 1;
+        for (int i = 2; i < numero ; i++) {
+            resultado = resultado * i;
+
+        }
+        return resultado;
     }
 }
+
