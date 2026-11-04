@@ -11,7 +11,7 @@ public final class InvertirCadena {
      * @param sPalabra String que almacena la Palabra/texto original
      * @return String Cadena invertida
      */
-    static String reverse(String sPalabra) {
+    static String invertir(String sPalabra) {
         StringBuilder resultado = new StringBuilder();
         if (sPalabra == null || sPalabra.isEmpty()) {
             return resultado.toString();

@@ -11,7 +11,7 @@ public final class Factorial {
      * @param numero int para el calculo de un factorial
      * @return int con el resultado
      */
-    static int calcular(int numero) {
+    static int calcularFactorial(int numero) {
         if (numero <= 1) {
             return 1;
         }
