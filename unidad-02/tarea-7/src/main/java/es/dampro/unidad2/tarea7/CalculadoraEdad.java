@@ -1,27 +1,29 @@
 package es.dampro.unidad2.tarea7;
 
-import java.time.*;
-import java.time.format.*;
-import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
+import java.time.Period;
 
 /**
- * TODO: Describe la finalidad de CalculadoraEdad.
+ * Calcula la edad exacta de una persona en años, meses y días.
  *
- * @author
- * @version
+ * @author RhazarDev
+ * @version 1.0
  */
 public final class CalculadoraEdad {
     private CalculadoraEdad() { }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * Calcula el tiempo transcurrido entre el nacimiento y una fecha de referencia.
      *
-     * @param nacimiento
-     * @param fechaActual
-     * @return
+     * @param nacimiento fecha de nacimiento de la persona
+     * @param fechaActual fecha de referencia hasta la que se calcula la edad
+     * @return periodo con los años, meses y días de edad
+     * @throws IllegalArgumentException si el nacimiento es posterior a la fecha de referencia
      */
     public static Period calcularEdad(LocalDate nacimiento, LocalDate fechaActual) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return Period.ZERO;
+        if (nacimiento.isAfter(fechaActual)) {
+            throw new IllegalArgumentException("El nacimiento no puede ser posterior a la fecha actual");
+        }
+        return Period.between(nacimiento, fechaActual);
     }
 }
