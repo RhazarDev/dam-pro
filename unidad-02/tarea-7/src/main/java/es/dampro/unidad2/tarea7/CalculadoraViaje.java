@@ -1,28 +1,29 @@
 package es.dampro.unidad2.tarea7;
 
-import java.time.*;
-import java.time.format.*;
-import java.time.temporal.ChronoUnit;
+import java.time.LocalDateTime;
 
 /**
- * TODO: Describe la finalidad de CalculadoraViaje.
+ * Calcula la fecha y hora de llegada de un viaje.
  *
- * @author
- * @version
+ * @author RhazarDev
+ * @version 1.0
  */
 public final class CalculadoraViaje {
     private CalculadoraViaje() { }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * Suma las horas y los minutos de duración del viaje a la fecha y hora de salida.
      *
-     * @param salida
-     * @param horas
-     * @param minutos
-     * @return
+     * @param salida fecha y hora de salida
+     * @param horas horas de duración del viaje
+     * @param minutos minutos de duración del viaje
+     * @return fecha y hora de llegada
+     * @throws IllegalArgumentException si las horas o los minutos son negativos
      */
     public static LocalDateTime calcularLlegada(LocalDateTime salida, long horas, long minutos) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return LocalDateTime.MIN;
+        if (horas < 0 || minutos < 0) {
+            throw new IllegalArgumentException("Las horas y los minutos no pueden ser negativos");
+        }
+        return salida.plusHours(horas).plusMinutes(minutos);
     }
 }
