@@ -1,27 +1,25 @@
 package es.dampro.unidad2.tarea7;
 
-import java.time.*;
-import java.time.format.*;
-import java.time.temporal.ChronoUnit;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 /**
- * TODO: Describe la finalidad de ConversorZonasHorarias.
+ * Convierte fechas y horas con zona horaria a otra zona horaria.
  *
- * @author
- * @version
+ * @author RhazarDev
+ * @version 1.0
  */
 public final class ConversorZonasHorarias {
     private ConversorZonasHorarias() { }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * Convierte una fecha y hora a otra zona horaria.
      *
-     * @param fechaOrigen
-     * @param zonaDestino
-     * @return
+     * @param fechaOrigen fecha y hora con su zona de origen
+     * @param zonaDestino zona horaria a la que se quiere convertir
+     * @return fecha y hora equivalente en la zona de destino
      */
     public static ZonedDateTime convertirZona(ZonedDateTime fechaOrigen, ZoneId zonaDestino) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return fechaOrigen;
+        return fechaOrigen.withZoneSameInstant(zonaDestino);
     }
 }
