@@ -1,29 +1,29 @@
 package es.dampro.unidad2.tarea7;
 
-import java.time.*;
-import java.time.format.*;
-import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
 
 /**
- * TODO: Describe la finalidad de CalculadoraVencimientos.
+ * Calcula fechas de vencimiento sumando o restando años, meses y días a una fecha.
  *
- * @author
- * @version
+ * @author RhazarDev
+ * @version 1.0
  */
 public final class CalculadoraVencimientos {
     private CalculadoraVencimientos() { }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * Aplica a la fecha primero los años, después los meses y por último los días.
      *
-     * @param fecha
-     * @param dias
-     * @param meses
-     * @param anios
-     * @return
+     * @param fecha fecha de partida
+     * @param dias días que se suman (o restan si es negativo)
+     * @param meses meses que se suman (o restan si es negativo)
+     * @param anios años que se suman (o restan si es negativo)
+     * @return fecha de vencimiento resultante
      */
     public static LocalDate calcularVencimiento(LocalDate fecha, int dias, int meses, int anios) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return LocalDate.MIN;
+        LocalDate resultado = fecha.plusYears(anios);
+        resultado = resultado.plusMonths(meses);
+        resultado = resultado.plusDays(dias);
+        return resultado;
     }
 }
