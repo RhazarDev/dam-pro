@@ -1,28 +1,38 @@
 package es.dampro.unidad2.tarea7;
 
-import java.time.*;
-import java.time.format.*;
-import java.time.temporal.ChronoUnit;
+import java.time.Duration;
+import java.time.LocalTime;
 
 /**
- * TODO: Describe la finalidad de CalculadoraJornada.
+ * Calcula el tiempo trabajado en una jornada dentro de un mismo día.
  *
- * @author
- * @version
+ * @author RhazarDev
+ * @version 1.0
  */
 public final class CalculadoraJornada {
     private CalculadoraJornada() { }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * Calcula la duración entre la entrada y la salida y le resta el descanso.
      *
-     * @param entrada
-     * @param salida
-     * @param descansoMinutos
-     * @return
+     * @param entrada hora de entrada al trabajo
+     * @param salida hora de salida del trabajo
+     * @param descansoMinutos minutos de descanso que se descuentan
+     * @return duración del tiempo trabajado
+     * @throws IllegalArgumentException si las horas o el descanso no son válidos
      */
     public static Duration calcularTiempoTrabajado(LocalTime entrada, LocalTime salida, int descansoMinutos) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return Duration.ZERO;
+        if (!salida.isAfter(entrada)) {
+            throw new IllegalArgumentException("La salida debe ser posterior a la entrada");
+        }
+        if (descansoMinutos < 0) {
+            throw new IllegalArgumentException("El descanso no puede ser negativo");
+        }
+        Duration jornada = Duration.between(entrada, salida);
+        Duration descanso = Duration.ofMinutes(descansoMinutos);
+        if (descanso.compareTo(jornada) > 0) {
+            throw new IllegalArgumentException("El descanso no puede ser mayor que la jornada");
+        }
+        return jornada.minus(descanso);
     }
 }
