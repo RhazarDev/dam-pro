@@ -3,9 +3,12 @@ package es.educacion.arrays;
 import java.sql.Array;
 import java.util.Arrays;
 
-// Devuelve un array nuevo con los elementos en orden inverso. No modifica el original. Null: IllegalArgumentException.
-// 
-// TODO: implementar el método y documentar la clase y el método mediante Javadoc.
+/**
+ * Clase que que devuelve un array nuevo con los elementos en orden inverso. No modifica el original. Null: IllegalArgumentException.
+ *
+ * @author RhazarDev
+ * @version 1.0.0
+ */
 public final class Ejercicio06Invertir {
     private Ejercicio06Invertir() { }
 
@@ -17,7 +20,11 @@ public final class Ejercicio06Invertir {
         System.out.println("Array invertido = " + Arrays.toString(numerosInverso));
     }
 
-    // Devuelve un array nuevo con los elementos en orden inverso. No modifica el original. Null: IllegalArgumentException.
+    /**
+     * Funcion que devuelve un array nuevo con los elementos en orden inverso. No modifica el original. Null: IllegalArgumentException.
+     * @param numeros Array que contiene los numeros int
+     * @return Array que contiene los numeros int invertidos
+     */
     public static int[] invertir(int[] numeros) {
         if (numeros == null) {
             throw new IllegalArgumentException("El array es nulo");
