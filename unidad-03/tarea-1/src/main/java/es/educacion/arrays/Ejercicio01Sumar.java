@@ -1,13 +1,41 @@
 package es.educacion.arrays;
 
-// Suma todos los valores. Array vacío: 0. Array null: IllegalArgumentException.
-// 
-// TODO: implementar el método y documentar la clase y el método mediante Javadoc.
+/** Clase que suma todos los valores. Array vacío: 0. Array null: IllegalArgumentException.
+ *
+ * @author RhazarDev
+ * @version 1.0.0
+ */
 public final class Ejercicio01Sumar {
     private Ejercicio01Sumar() { }
 
-    // Suma todos los valores. Array vacío: 0. Array null: IllegalArgumentException.
+    public static void main(String[] args) {
+        int [] elementos = new int [6];
+        elementos[0] = 7;
+        elementos[1] = 8;
+        elementos[2] = 2;
+        elementos[3] = 3;
+        elementos[4] = 414;
+        elementos[5] = 280;
+        int [] numeros = {7,8,2,3,414,280};
+
+        int sumaElementos = sumar(elementos);
+        System.out.println("La suma de elementos es = " +sumaElementos);
+    }
+
+    /**
+     * Funcion que suma todos los valores de un array
+     * @param numeros Array que contiene los numeros int a sumar
+     * @return int con la suma de los valores
+     */
     public static int sumar(int[] numeros) {
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        if (numeros == null || numeros.length == 0) {
+            throw new IllegalArgumentException("El array es nulo o vacio");
+        }
+        int suma = 0;
+        for (int numero:numeros) {
+            suma = suma + numero;
+        }
+        return suma;
+
     }
 }
