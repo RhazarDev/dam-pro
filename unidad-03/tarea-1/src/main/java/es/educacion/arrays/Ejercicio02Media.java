@@ -1,13 +1,36 @@
 package es.educacion.arrays;
 
-// Calcula la media aritmética con decimales. Vacío o null: IllegalArgumentException.
-// 
-// TODO: implementar el método y documentar la clase y el método mediante Javadoc.
+/**
+ * Clase que calcula la media aritmética con decimales. Vacío o null: IllegalArgumentException.
+ *
+ * @author RhazarDev
+ * @version 1.0.0
+ */
 public final class Ejercicio02Media {
     private Ejercicio02Media() { }
 
-    // Calcula la media aritmética con decimales. Vacío o null: IllegalArgumentException.
+    public static void main(String[] args) {
+        int[] notas = {8,7,3,3,10};
+        double resultado = media(notas);
+        System.out.println("La media es = " +resultado);
+    }
+
+    /**
+     * Funcion que calcula la media con decimales.
+     *
+     * @param notas Array con los double de las notas
+     * @return double con el resultado de la media
+     * @exception IllegalArgumentException
+     */
     public static double media(int[] notas) {
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        if (notas == null || notas.length == 0) {
+            throw new IllegalArgumentException("El array es nulo o vacio");
+        }
+        double suma = 0;
+        for (double nota:notas) {
+            suma = suma + nota;
+        }
+        return suma/notas.length;
+
     }
 }
