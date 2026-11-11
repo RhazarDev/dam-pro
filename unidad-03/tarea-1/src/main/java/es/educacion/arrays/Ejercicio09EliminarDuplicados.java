@@ -14,7 +14,7 @@ public final class Ejercicio09EliminarDuplicados {
 
     public static void main(String[] args) {
 
-        int [] numeros = {7,8,8,8,2,3,414,280};
+        int [] numeros = {7,2,2,3,3,414,280};
 
         int[] resultado = sinDuplicados(numeros);
         System.out.println("El array es = " + Arrays.toString(resultado));
