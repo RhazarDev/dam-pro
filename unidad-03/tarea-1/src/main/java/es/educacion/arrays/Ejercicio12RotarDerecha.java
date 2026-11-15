@@ -23,7 +23,7 @@ public final class Ejercicio12RotarDerecha {
      * Funcion que devuelve una copia rotada a la derecha el número no negativo de posiciones. Vacío devuelve vacío. No modifica el original. Null o posiciones negativas: IllegalArgumentException.
      * @param numeros Array de int con los numeros almacenados
      * @param posiciones Int con el numero de posiciones a rotar
-     * @return
+     * @return Array de int con los numeros rotados
      */
     public static int[] rotar(int[] numeros, int posiciones) {
         if (numeros == null) {
