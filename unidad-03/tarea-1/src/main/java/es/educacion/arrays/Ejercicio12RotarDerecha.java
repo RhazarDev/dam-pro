@@ -15,7 +15,7 @@ public final class Ejercicio12RotarDerecha {
         int posiciones = 2;
         int [] resultado = rotar(numeros,posiciones);
 
-        System.out.println("El rango es de =" + Arrays.toString(resultado));
+        System.out.println("El array rotado es = " + Arrays.toString(resultado));
 
     }
 
