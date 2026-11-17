@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Clase que devuelve un array con la suma de cada fila. Admite matriz rectangular o irregular y filas vacías.
  *
- * @author Dhalsadev
+ * @author RhazarDev
  * @version 1.0.0
  */
 public final class Ejercicio16SumaFilas {
@@ -38,16 +38,19 @@ public final class Ejercicio16SumaFilas {
             if (fila == null) {
                 throw new IllegalArgumentException();
             }
-            for (int j = 0; j < matriz[i].length; j++) {
-                sumaFila += fila[j];
-            }
-            resultado[i] = sumaFila;
 
-            /*
+
             for (int columna:fila) {
                 sumaFila += columna;
             }
-            */
+            /*
+            for (int j = 0; j < matriz[i].length; j++) {
+                sumaFila += fila[j];
+            }
+             */
+            resultado[i] = sumaFila;
+
+
         }
         return resultado;
     }
