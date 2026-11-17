@@ -27,7 +27,7 @@ public final class Ejercicio20RachaCreciente {
             return 0;
         }
         int racha = 0;
-        int resultado = 0;
+        int resultado = 1;
 
         for (int i = 0; i < numeros.length-1; i++) {
             if (numeros[i] < numeros[i+1]) {
